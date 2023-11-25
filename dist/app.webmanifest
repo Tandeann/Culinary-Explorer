@@ -1,0 +1,60 @@
+{
+  "id": "Culinary-Explorer",
+  "start_url": "./index.html",
+  "name": "Culinary App",
+  "short_name": "Culinary Explorer",
+  "description": "Web Profile For Culinary Explorer",
+  "display": "standalone",
+  "background_color": "#7d7c7c",
+  "theme_color": "#191717",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "73x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x95",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x126",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x142",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x150",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x189",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x379",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x505",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

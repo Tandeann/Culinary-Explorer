@@ -1,9 +1,9 @@
 class HeroComponent extends HTMLElement {
-  connectedCallback() {
-    this.render();
+  connectedCallback () {
+    this.render()
   }
 
-  render() {
+  render () {
     this.innerHTML = `
         <div class="hero-component">
             <h1>Culinary Explorer</h1>  
@@ -11,9 +11,9 @@ class HeroComponent extends HTMLElement {
             <img src="./images/heros/hero-image_4.jpg" alt="Hero Image">
             
         </div>
-          `;
-    this.querySelector(".hero-component").className = "hero-component";
+          `
+    this.querySelector('.hero-component').className = 'hero-component'
   }
 }
 
-customElements.define("hero-component", HeroComponent);
+customElements.define('hero-component', HeroComponent)

@@ -1,1 +1,0 @@
-async function fetchData(){try{const t=await fetch("./data/DATA.json ");return(await t.json()).restaurants}catch(t){throw console.error("Error fetching data:",t),t}}export default fetchData;

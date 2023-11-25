@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Quattrocento:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Quattrocento:wght@700&display=swap");
 
-@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-5");
 
 * {
   margin: 0;
@@ -11,6 +11,7 @@
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .skip-link {
@@ -28,10 +29,10 @@ body {
 }
 
 main {
-  height: 100%;
+  flex: 1;
 
   h1 {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     font-weight: 700;
     margin-top: 40px;
     text-align: center;
@@ -41,6 +42,7 @@ main {
 footer {
   padding: 15px;
   background-color: #3a4f52;
+  margin-top: auto; 
 
   p {
     text-align: center;
@@ -61,7 +63,7 @@ footer {
   z-index: 99;
 
   h2 {
-    font-family: 'Bubblegum Sans', sans-serif;
+    font-family: "Bubblegum Sans", sans-serif;
     font-size: 25px;
     color: #f5fefd;
     display: flex;
@@ -135,7 +137,7 @@ a {
   position: relative;
 
   h1 {
-    font-family: 'Bubblegum Sans', sans-serif;
+    font-family: "Bubblegum Sans", sans-serif;
     color: #f5fefd;
     font-size: 2.5rem;
     font-weight: 700;
@@ -168,10 +170,6 @@ a {
   padding: 30px;
   padding-left: 50px;
   padding-right: 50px;
-
-  /* padding: 15px;
-    justify-content:center;
-    align-items: center; */
   gap: 1rem;
 }
 
@@ -199,7 +197,7 @@ a {
     .city {
       position: absolute;
       padding: 0.5rem;
-      top :1rem;
+      top: 1rem;
       left: 0;
       display: inline-block;
       background-color: #1b2326;
@@ -217,7 +215,7 @@ a {
   }
 
   .name {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 25px;
@@ -226,13 +224,13 @@ a {
   }
 
   .description {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     margin-top: 5px;
     font-size: 14px;
     text-align: justify;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 11;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
   }
@@ -310,8 +308,7 @@ a {
 }
 
 @media (min-width: 1440px) {
-    .card-container {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
   }
-
+}
