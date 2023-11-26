@@ -1,0 +1,17 @@
+import '../../../styles/error-page.scss'
+
+const ErrorPage = {
+  async render () {
+    return `
+    <div class="error-page">
+    <h1 class="error-page__code">404</h1>
+    <p class="error-page__message">
+        Sorry, the page you were looking for could not be found.
+    </p>
+    <a href="/" class="error-page__link">Go to home</a>
+    </div>
+    `
+  }
+}
+
+export default ErrorPage

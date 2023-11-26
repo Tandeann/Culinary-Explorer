@@ -5,7 +5,6 @@ async function getAllRestaurant () {
   try {
     const response = await fetch(API_ENDPOINTS.RESTAURANT_LIST)
     const responseJson = await response.json()
-    console.log(responseJson)
 
     if (responseJson.error) {
       throw new Error(responseJson.message)
@@ -13,7 +12,7 @@ async function getAllRestaurant () {
 
     return responseJson.restaurants
   } catch (error) {
-    return import('../utils/toaster-initiator')
+    return import('../utils/toaster-initiator.js')
       .then((module) => module.default)
       .then((ToasterInitiator) => {
         ToasterInitiator.init(error.message)
@@ -34,7 +33,7 @@ async function getRestaurantDetail (id) {
 
     return responseJson.restaurant
   } catch (error) {
-    return import('../utils/toaster-initiator')
+    return import('../utils/toaster-initiator.js')
       .then((module) => module.default)
       .then((ToasterInitiator) => {
         ToasterInitiator.init(error.message)
@@ -61,7 +60,7 @@ async function addRestaurantReview (review) {
 
     return responseJson.customerReviews
   } catch (error) {
-    return import('../utils/toaster-initiator')
+    return import('../utils/toaster-initiator.js')
       .then((module) => module.default)
       .then((ToasterInitiator) => {
         ToasterInitiator.init(error.message)

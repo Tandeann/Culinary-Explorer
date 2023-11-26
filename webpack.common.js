@@ -28,6 +28,14 @@ module.exports = {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
+        options: {
+          encoding: 'utf-8',
+          limit: 10240 // Convert SVGs under 10kb to data URIs
+        }
       }
     ]
   },
@@ -54,6 +62,13 @@ module.exports = {
           handler: 'StaleWhileRevalidate',
           options: {
             cacheName: 'restaurant-api'
+          }
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://use.fontawesome.com/b070c8f1df.js'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'icon-like'
           }
         }
       ]

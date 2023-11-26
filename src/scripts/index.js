@@ -6,6 +6,7 @@ import Main from './view/main.js'
 import './view/components/restaurant-list.js'
 import swRegister from './utils/sw-register.js'
 import './view/components/review-item.js'
+import './view/components/toast-alert.js'
 
 const hamburgerButtonElement = document.querySelector('#humbergerButton')
 const navigationDrawerElement = document.querySelector('#navigationDrawer')
