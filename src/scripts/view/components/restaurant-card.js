@@ -16,7 +16,7 @@ class RestaurantCard extends HTMLElement {
 
   render () {
     this.innerHTML = `
-    <a id="restaurantItemAnchor" href="#">
+    <a id="restaurantItemAnchor" href="/#/detail/${this._restaurant.id}">
         <div class="restaurant-card">
         <div class="header">
            <img class="image" src="${API_CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}">

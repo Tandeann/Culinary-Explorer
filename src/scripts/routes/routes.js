@@ -5,7 +5,7 @@ import HomePage from '../view/pages/home-page.js'
 const routes = {
   '/': HomePage, // default page
   '/home': HomePage,
-  '/detail/:id': DetailPage,
+  '/detail': DetailPage,
   '/favorite': FavoritePage
 }
 

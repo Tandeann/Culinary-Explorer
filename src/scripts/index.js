@@ -5,8 +5,23 @@ import './view/components/hero-component.js'
 import Main from './view/main.js'
 import './view/components/restaurant-list.js'
 import swRegister from './utils/sw-register.js'
+import './view/components/review-item.js'
+
+const hamburgerButtonElement = document.querySelector('#humbergerButton')
+const navigationDrawerElement = document.querySelector('#navigationDrawer')
+const bodyElement = document.querySelector('body')
 
 const main = new Main()
+
+hamburgerButtonElement.addEventListener('click', (event) => {
+  navigationDrawerElement.classList.toggle('open')
+  event.stopPropagation()
+})
+
+bodyElement.addEventListener('click', (event) => {
+  navigationDrawerElement.classList.remove('open')
+})
+
 window.addEventListener('hashchange', () => {
   main.renderPage()
 })

@@ -13,7 +13,7 @@ class AppBar extends HTMLElement {
       <nav id='navigationDrawer' class="menu">
         <ul>
             <li><a href="/" tabindex="0">Home</a></li>
-            <li><a href="/favorite" tabindex="0">Favorite</a></li>
+            <li><a href="/#/favorite" tabindex="0">Favorite</a></li>
             <li><a href="https://www.linkedin.com/in/yoga-tandean/" tabindex="0">About Us</a></li>
         </ul>
       </nav>

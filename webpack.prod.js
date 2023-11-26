@@ -1,5 +1,6 @@
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
+const { merge } = require('webpack-merge')
+const common = require('./webpack.common')
+// const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -13,11 +14,11 @@ module.exports = merge(common, {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env'],
-            },
-          },
-        ],
-      },
-    ],
-  },
-});
+              presets: ['@babel/preset-env']
+            }
+          }
+        ]
+      }
+    ]
+  }
+})
