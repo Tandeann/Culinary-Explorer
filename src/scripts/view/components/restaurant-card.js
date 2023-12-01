@@ -19,7 +19,7 @@ class RestaurantCard extends HTMLElement {
     <a id="restaurantItemAnchor" href="/#/detail/${this._restaurant.id}">
         <div class="restaurant-card">
         <div class="header">
-           <img class="image" src="${API_CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}">
+           <img class="image lazyload" data-src="${API_CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}" images>
            <div class="city">${this._restaurant.city}</div>
            </div>
              <div class="name">${this._restaurant.name}</div>

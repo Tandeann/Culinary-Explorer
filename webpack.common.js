@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 // const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
 module.exports = {
@@ -13,6 +14,29 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 20000,
+      maxSize: 70000,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      automaticNameDelimiter: '~',
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
   },
   module: {
     rules: [
@@ -40,9 +64,10 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     new CleanWebpackPlugin(),
-
+    new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html')
@@ -75,41 +100,4 @@ module.exports = {
       ]
     })
   ]
-  // optimization: {
-  //   minimizer: [
-  //     '...',
-  //     new ImageMinimizerPlugin({
-  //       minimizer: {
-  //         implementation: ImageMinimizerPlugin.sharpMinify,
-  //         options: {
-  //           encodeOptions: {
-  //             // Your options for `sharp`
-  //             // https://sharp.pixelplumbing.com/api-output
-  //           }
-  //         }
-  //       }
-  //     })
-  //   ],
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     minSize: 20000,
-  //     maxSize: 70000,
-  //     minChunks: 1,
-  //     maxAsyncRequests: 30,
-  //     maxInitialRequests: 30,
-  //     automaticNameDelimiter: '~',
-  //     enforceSizeThreshold: 50000,
-  //     cacheGroups: {
-  //       defaultVendors: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         priority: -10
-  //       },
-  //       default: {
-  //         minChunks: 2,
-  //         priority: -20,
-  //         reuseExistingChunk: true
-  //       }
-  //     }
-  //   }
-  // }
 }

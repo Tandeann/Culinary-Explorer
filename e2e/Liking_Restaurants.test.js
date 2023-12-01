@@ -8,11 +8,11 @@ Before(({ I }) => {
   I.amOnPage('/#/favorite')
 })
 
-Scenario('showing empty liked restaurants', ({ I }) => {
-  I.seeElement('restaurant-list')
+// Scenario('showing empty liked restaurants', ({ I }) => {
+//   I.seeElement('restaurant-list')
 
-  I.see('No restaurants found', '.placeholder')
-})
+//   I.see('No restaurants found', '.placeholder')
+// })
 
 Scenario('liking one restaurant', async ({ I }) => {
   I.see('No restaurants found', '.placeholder')
@@ -34,31 +34,31 @@ Scenario('liking one restaurant', async ({ I }) => {
   assert.strictEqual(firstRestaurantTittle, likedRestaurantTitle)
 })
 
-// Scenario('unliking one restaurant', async ({ I }) => {
-//   I.amOnPage('/')
+Scenario('unliking one restaurant', async ({ I }) => {
+  I.amOnPage('/')
 
-//   I.seeElement('restaurant-card')
+  I.seeElement('restaurant-card')
+  const firstRestaurant = locate('restaurant-card').first()
+  await I.grabTextFrom(firstRestaurant)
+  I.click(firstRestaurant)
 
-//   const firstRestaurant = locate('restaurant-card').first()
-//   I.click(firstRestaurant)
+  I.seeElement('#likeButton')
+  I.click('#likeButton')
 
-//   const RestaurantTittle = await I.grabTextFrom('')
+  I.amOnPage('/#/favorite')
+  I.wait(2)
+  I.seeElement('restaurant-card')
+  const firstRestaurantOnFavoritePage = locate('restaurant-card').first()
+  await I.grabTextFrom(firstRestaurantOnFavoritePage)
+  I.click(firstRestaurantOnFavoritePage)
 
-//   I.seeElement('#likeButton')
-//   I.click('#likeButton')
+  I.seeElement('#likeButton')
+  I.click('#likeButton')
+  I.wait(2)
+  I.amOnPage('/#/favorite')
+  I.wait(2)
 
-//   I.amOnPage('/#/favorite')
-//   I.seeElement('restaurant-list')
+  I.seeElement('restaurant-list')
 
-//   I.click(locate('restaurant-card').first())
-
-//   const likedRestaurantName = await I.grabTextFrom('#restaurantName')
-
-//   assert.strictEqual(restaurantName, likedRestaurantName)
-
-//   I.seeElement('#favoriteButton')
-//   I.click('#favoriteButton')
-
-//   I.amOnPage('/#/favorite')
-//   I.see('Restaurant not found', '#restaurantListNotFound')
-// })
+  I.see('No restaurants found', '.placeholder')
+})
