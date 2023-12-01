@@ -8,7 +8,10 @@ class HeroComponent extends HTMLElement {
         <div class="hero-component">
             <h1>Culinary Explorer</h1>  
             <p>"Discover Culinary Wonders: Your Journey to Tantalizing Tastes Begins Here!"</p>
-            <img src="./images/heros/hero-image_4.jpg" alt="Hero Image">
+            <picture>
+            <source media="(max-width: 600px)" srcset="./images/heros/hero_image_4-small.jpg">
+            <img src="./images/heros/hero_image_4-large.jpg" alt="Hero Image">
+            </picture>
             
         </div>
           `
