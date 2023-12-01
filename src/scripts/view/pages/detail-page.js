@@ -2,8 +2,9 @@ import { getRestaurantDetail } from '../../data/data-source.js'
 import UrlParser from '../../routes/url-parser.js'
 import API_ENDPOINTS from '../../data/api-endpoint.js'
 import ReviewInitiator from '../../utils/review-initiator.js'
-import LikeButtonInitiator from '../../utils/like-button-initiator.js'
+import LikeButtonPresenter from '../../utils/like-button-presenter.js'
 import '../../../styles/detail-page.scss'
+import FavoriteRestaurantIdb from '../../data/favorite-idb.js'
 
 const DetailPage = {
   async render () {
@@ -143,8 +144,9 @@ const DetailPage = {
       reviewForm: reviewFormElement
     })
 
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

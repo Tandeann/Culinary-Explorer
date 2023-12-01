@@ -9,7 +9,8 @@
     "serve": "http-server dist --port 9000",
     "lint": "eslint ./src",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -22,6 +23,7 @@
     "babel-jest": "^29.6.1",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
+    "codeceptjs": "^3.5.8",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.54.0",
@@ -34,7 +36,9 @@
     "http-server": "^14.1.1",
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
+    "playwright": "^1.40.1",
     "sass-loader": "^13.3.2",
+    "sharp": "^0.33.0",
     "style-loader": "^3.3.1",
     "svg-url-loader": "^8.0.0",
     "webpack": "^5.89.0",
@@ -45,6 +49,7 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
     "idb": "^7.1.1",
     "regenerator-runtime": "^0.14.0",
     "sass": "^1.69.5",
