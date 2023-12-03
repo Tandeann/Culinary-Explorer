@@ -176,7 +176,6 @@ a {
 
   img {
     width: 100%;
-    min-width: auto;
     object-fit: cover;
     z-index: -1;
   }
@@ -257,10 +256,7 @@ a {
 
 @media (max-width: 767px) {
   .hero-component {
-    img {
-      height: 400px;
-    }
-
+  
     p {
       margin-top: 80px;
     }
@@ -320,9 +316,6 @@ a {
 }
 
 @media (min-width: 768px) {
-  .hero-component img {
-    height: 400px;
-  }
 
   .card-container {
     grid-template-columns: repeat(2, 1fr);
@@ -333,22 +326,11 @@ a {
   }
 }
 
-@media (min-width: 1024px) {
+
+@media (min-width: 1200px) {
   .hero-component img {
-    width: 100%;
-    min-width: 1000px;
+    width: 1000px;
     margin: 0 auto;
-  }
-
-  .card-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .like {
-    width: 80px;
-  height: 80px;
-    bottom: 4vw;
-    right: 5vw;
   }
 }
 
